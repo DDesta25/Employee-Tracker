@@ -6,7 +6,7 @@
 
   ## Description
   
-  It tracks all the different employess in each department and what roles they have. It tracks the title and role   of each individual and their salary
+  It tracks all the different employees in each department and what roles they have. It tracks the title and role   of each individual and their salary
   
   ## Table of Contents 
   

@@ -1,4 +1,4 @@
-use employees;
+use Employee_Tracker;
 
 INSERT INTO department
     (name)
@@ -23,11 +23,24 @@ VALUES
 INSERT INTO employee
     (first_name, last_name, role_id, manager_id)
 VALUES
-    ('John', 'Doe', 1, NULL),
-    ('Mike', 'Chan', 2, 1),
-    ('Ashley', 'Rodriguez', 3, NULL),
-    ('Kevin', 'Tupik', 4, 3),
-    ('Kunal', 'Singh', 5, NULL),
-    ('Malia', 'Brown', 6, 5),
-    ('Sarah', 'Lourd', 7, NULL),
-    ('Tom', 'Allen', 8, 7);
+      ('Jon', 'Jones', 1, NULL),
+    ('Mike', 'Lapin', 2, 1),
+    ('Amanda', 'Nunez', 3, NULL),
+    ('Kevin', 'Lee', 4, 3),
+    ('Chuck', 'Liddell', 5, NULL),
+    ('Dana', 'White', 6, 5),
+    ('Sandy', 'Cheeks', 7, NULL),
+    ('Thomas', 'Tray', 8, 7);
+
+
+
+
+
+    --    ('John', 'Doe', 1, NULL),
+    -- ('Mike', 'Chan', 2, 1),
+    -- ('Ashley', 'Rodriguez', 3, NULL),
+    -- ('Kevin', 'Tupik', 4, 3),
+    -- ('Kunal', 'Singh', 5, NULL),
+    -- ('Malia', 'Brown', 6, 5),
+    -- ('Sarah', 'Lourd', 7, NULL),
+    -- ('Tom', 'Allen', 8, 7);

@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS Lions_Lost;
-CREATE DATABASE Lions_Lost;
-USE Lions_Lost;
+DROP DATABASE IF EXISTS Employee_Tracker;
+CREATE DATABASE Employee_Tracker;
+USE Employee_Tracker;
 
 
 CREATE TABLE department(
