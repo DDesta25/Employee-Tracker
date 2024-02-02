@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 // const mysql = require("mysql2");
 require("dotenv").config();
-const db = require('./db/connection')
+const db = require("./db/connection");
 
 const prompt = () => {
   inquirer
@@ -14,7 +14,6 @@ const prompt = () => {
           { name: "view all departments", value: "VIEW_DEPARTMENTS" },
           { name: "view all employees", value: "VIEW_EMPLOYEES" },
           { name: "view all roles", value: "VIEW_ROLES" },
-
           { name: "add a department", value: "ADD_DEPARTMENT" },
           { name: "add a role", value: "ADD_ROLE" },
           { name: "add an employee", value: "ADD_EMPLOYEE" },
@@ -151,25 +150,30 @@ function addEmployee() {
         },
       },
       {
-        type: 'input',
-        name: 'lastName',
-        message: 'what is the last name of the employee',
-        validate: LastNameInput => {
+        type: "input",
+        name: "lastName",
+        message: "what is the last name of the employee",
+        validate: (LastNameInput) => {
           if (LastNameInput) {
             return true;
           } else {
             console.log("please enter last name");
             return false;
           }
-        }
-      }
+        },
+      },
     ])
     .then((answers) => {
-      db.query("INSERT INTO employee SET ?", answers, (err, results) => {
-        if (results) throw results;
-        console.table(results);
-        prompt();
-      });
+      console.log(answers);
+      db.query(
+        "INSERT INTO employee (first_name, last_name)VALUES(?,?)",
+        [answers.firstName, answers.lastName],
+        (err, results) => {
+          if (err) throw err;
+          console.table(results);
+          prompt();
+        }
+      );
     });
 }
 
@@ -187,7 +191,7 @@ function updateEmployeeRole() {
       { name: "Role 4", value: 4 },
       { name: "Role 5", value: 5 },
       { name: "Role 6", value: 6 },
-      { name: "Role 7", value: 7 }
+      { name: "Role 7", value: 7 },
     ];
 
     inquirer
@@ -195,7 +199,8 @@ function updateEmployeeRole() {
         {
           type: "input",
           name: "employee",
-          message: "what employee role do you want to update ",
+          message:
+            "what employee role do you want to update (use employ first name) ",
           choices: employeeArray,
         },
         {
