@@ -1,18 +1,7 @@
 const inquirer = require("inquirer");
-const mysql = require("mysql2");
+// const mysql = require("mysql2");
 require("dotenv").config();
-
-const db = mysql.createConnection(
-  {
-    host: "localhost",
-    // MySQL username,
-    user: "root",
-    // MySQL password
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-  },
-  console.log(`Connected to the Employee_Tracker database.`)
-);
+const db = require('./db/connection')
 
 const prompt = () => {
   inquirer
@@ -198,13 +187,13 @@ function updateEmployeeRole() {
       { name: "Role 4", value: 4 },
       { name: "Role 5", value: 5 },
       { name: "Role 6", value: 6 },
-      { name: "Role 7", value: 7 },
+      { name: "Role 7", value: 7 }
     ];
 
     inquirer
       .prompt([
         {
-          type: "list",
+          type: "input",
           name: "employee",
           message: "what employee role do you want to update ",
           choices: employeeArray,
@@ -218,11 +207,11 @@ function updateEmployeeRole() {
       ])
       .then((answers) => {
         db.query(
-          "UPDATE employee SET role_id = ? WHERE employee_name =?",
+          "UPDATE employee SET role_id = ? WHERE first_name =?",
           [answers.role, answers.employee],
           (err, results) => {
-            if (results) throw results;
-            console.table("Employee role updated");
+            if (err) throw err;
+            console.table(results);
             prompt();
           }
         );
