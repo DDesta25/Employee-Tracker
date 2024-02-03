@@ -7,7 +7,19 @@
   ## Description
   
   It tracks all the different employees in each department and what roles they have. It tracks the title and role   of each individual and their salary
-## Screenshots 
+
+
+  ## Video Description 
+
+Video description of how the Employee-Tracker works and what happens every time you update the department, the role, and also the update the employee role.
+https://drive.google.com/file/d/1h9GL-RmV4LFopq_enGDVsZVzE-ySwA-C/view
+
+
+DB video
+https://drive.google.com/file/d/1mTaMJ6JeLyURYuRr__64yYN5mcU2m3Ko/view
+
+
+  ## Screenshots 
 
 Screenshots of all the departments, all roles and, all employees
 what would you like to do view all departments
